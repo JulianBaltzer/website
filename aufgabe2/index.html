@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Startseite</title>
+	<script>
+		window.onload = function(){
+			speichern = document.getElementById("Speichern");
+			speichern.onclick = speichern1;
+
+			result = document.getElementById("result");
+			result.onclick = result1;
+		}
+		function speichern1(){
+			document.getElementById("usecase").value = "save";
+			document.getElementById("form1").submit();
+		}
+		function result1(){
+			document.getElementById("usecase").value = "result";
+			document.getElementById("form1").submit();
+		}
+	</script>
+	<style>
+  #frame {
+  width: 25em;
+  
+  
+  margin-left:37%;
+  margin-top:10%;
+  background-color:gray;
+}
+	</style>
+</head>
+	<body>
+		<form id = "form1" action = "server.php" method = "POST">
+			<div id = frame>
+				<button id = "Speichern">Speichern</button>
+				<button id = "reset">Zurücksetzen</button>
+				<button id = "result">Durchschnitt</button>
+				<p>Vorname:</p><input name = "vorname"></input>
+				<p>Nachname:</p><input name = "nachname"></input>
+				<p>Note:</p><input name = "note"></input>
+				
+				
+			</div>
+			<input id= "usecase" name= "usecase" type = "hidden" value = ""></input>
+		</form>
+	</body>
+</html>
